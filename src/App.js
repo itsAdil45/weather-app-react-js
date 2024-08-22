@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './Components/Home';
-import Result from './Components/Result';
-import DetailScreen from './Components/DetailScreen';
+import Home from './Views/Home';
+import Result from './Components/SearchResult';
+import DetailScreen from './Views/DetailScreen';
 function App() {
   return (
     // <div className="App">

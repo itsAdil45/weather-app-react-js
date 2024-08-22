@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation ,Link} from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
+import { useFavCities } from "../Providers/FavCitiesProvider";
 
 const Result=()=>{
     const location = useLocation();
@@ -8,12 +9,12 @@ const Result=()=>{
     const city = query.get("city");
   
     const { data, loading, error } = useFetch([city]);
-  
+    const { addFav } = useFavCities();
+
     if (loading) {
       return <p>Loading...</p>;
     }
     
-  
     if (error) {
       return <p>Error: No City Found</p>;
     }
@@ -28,8 +29,7 @@ const Result=()=>{
                 <h2>{cityData.location.name}</h2>
               </Link>
               <p>Temperature: {cityData.current.temp_c}°C</p>
-              <button>Add Favourite</button>
-              {/*  onClick={()=>{addFav(cityData)}} */}
+              <button onClick={()=>{addFav(cityData)}}>Add Favourite</button>
             </div>
           ))}
         </div>

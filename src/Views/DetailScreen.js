@@ -11,7 +11,7 @@ const DetailScreen=()=>{
             <h2>Region Name: {city.location.region}</h2>
             <h2>Country Name: {city.location.country}</h2>
             <h2>Condition: {city.current.condition.text}</h2>
-            <img src={city.current.condition.icon}/>
+            <img alt="" src={city.current.condition.icon}/>
             <h2>Wind: {city.current.wind_mph}mph</h2>
             <h2>Feels Like: {city.current.feelslike_c}C</h2>
 
