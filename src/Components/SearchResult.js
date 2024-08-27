@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation ,Link} from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { useFavCities } from "../Providers/FavCitiesProvider";
-
+import ResponsiveAppBar from "./ResponsiveAppBar";
 const Result=()=>{
     const location = useLocation();
     const query = new URLSearchParams(location.search);
@@ -21,6 +21,7 @@ const Result=()=>{
   
     return (
       <div>
+        <ResponsiveAppBar/>
         <h1>Weather Results</h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {data.map((cityData, index) => (

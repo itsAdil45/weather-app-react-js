@@ -8,6 +8,7 @@ function App() {
     // <div className="App">
     //   <Home/>
     // </div>
+    <>
     <Router>
       <Routes>
           <Route path='/' element={<Home />}/>
@@ -15,6 +16,7 @@ function App() {
           <Route path='detail' element={<DetailScreen />}/>
       </Routes>
     </Router>
+    </>
   );
 }
 

@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
-
+body{
+  background: radial-gradient( #5fffff, #0a15aa); 
+  height: 100vh;
+  width: 100vw;
+  font-family: cursive;
+  color: rgba(53, 4, 4, 0.788);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

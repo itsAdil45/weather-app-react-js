@@ -1,12 +1,13 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
-
+import ResponsiveAppBar from "../Components/ResponsiveAppBar";
 const DetailScreen=()=>{
     const location = useLocation();
     const { city } = location.state || {};
     return( 
 
         <div>
+                <ResponsiveAppBar/>
             <h2>City Name: {city.location.name}</h2>
             <h2>Region Name: {city.location.region}</h2>
             <h2>Country Name: {city.location.country}</h2>
