@@ -7,6 +7,7 @@ body{
   width: 100vw;
   font-family: cursive;
   color: rgba(53, 4, 4, 0.788);
+  overflow-x: hidden;
 }
 .App-logo {
   height: 40vmin;

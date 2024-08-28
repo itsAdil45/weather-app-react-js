@@ -3,6 +3,8 @@ import { useLocation ,Link} from "react-router-dom";
 import useFetch from "../Hooks/useFetch";
 import { useFavCities } from "../Providers/FavCitiesProvider";
 import ResponsiveAppBar from "./ResponsiveAppBar";
+import Button from '@mui/material/Button';
+
 const Result=()=>{
     const location = useLocation();
     const query = new URLSearchParams(location.search);
@@ -20,17 +22,19 @@ const Result=()=>{
     }
   
     return (
-      <div>
+      <div style={{textAlign:"center"}}>
         <ResponsiveAppBar/>
-        <h1>Weather Results</h1>
+        <h1>Weather</h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {data.map((cityData, index) => (
-            <div key={index} style={{ backgroundColor: "#C8C8C8", width: "50%", borderRadius: "10px", padding: "20px", marginTop: "20px" }}>
-              <Link to="/detail" state={{ city: cityData }} key={index}>
-                <h2>{cityData.location.name}</h2>
+            <div key={index} style={{ backgroundColor: "#C8C8C8", width: "20%", borderRadius: "10px", padding: "20px", marginTop: "20px" }}>
+              <Link style={{color:"black", textDecoration:"none"}} to="/detail" state={{ city: cityData }} key={index}>
+                <h2 >{cityData.location.name}</h2>
               </Link>
               <p>Temperature: {cityData.current.temp_c}°C</p>
-              <button onClick={()=>{addFav(cityData)}}>Add Favourite</button>
+              <Button onClick={()=>{addFav(cityData)}}                             
+              variant="contained"
+              >Add Favourite</Button>
             </div>
           ))}
         </div>
