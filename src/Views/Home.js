@@ -9,7 +9,7 @@ import { Favorite, Search } from "@mui/icons-material";
 import Input from '@mui/material/Input';
 import { IconButton } from "@mui/material";
 import ResponsiveAppBar from "../Components/ResponsiveAppBar";
-
+import CurrentCityForecast from "../Components/CurrentCityForecast";
 const Home = () => {
     const [cities] = useState(['Lahore', 'Karachi', 'Islamabad']);
     const { favCities, addFav, removeFav } = useFavCities();
@@ -87,9 +87,13 @@ const Home = () => {
                     </Card>
                 ))}
             </div>
+            <div>
+                <CurrentCityForecast/>
+            </div>
             <div style={{ marginTop: "40px" }}>
                 <Favourites favorites={favCities} removeFav={removeFav} />
             </div>
+
         </div>
     );
 };

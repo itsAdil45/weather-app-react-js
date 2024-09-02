@@ -9,7 +9,7 @@ const useFetch=(cities)=>{
         const fetchData =async()=>{
             setLoading(false);
             try {
-                const responses = await Promise.all(cities.map((city)=>( axios.get(`http://api.weatherapi.com/v1/forecast.json?key=25ea86c2cb1d42c0b4a82104241508&q=${city}&aqi=yes`))));
+                const responses = await Promise.all(cities.map((city)=>( axios.get(`http://api.weatherapi.com/v1/forecast.json?key=25ea86c2cb1d42c0b4a82104241508&q=${city}&days=7&aqi=no&alerts=no`))));
                 setData(responses.map(response => response.data));
             } catch (error) {
                 setError(error);
